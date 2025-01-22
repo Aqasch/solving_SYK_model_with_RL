@@ -75,9 +75,9 @@ class CircuitEnv():
         # min_eig = conf['env']['fake_min_energy'] if "fake_min_energy" in conf['env'].keys() else min(eigvals) + energy_shift
         self.min_eig, self.true_expval, self.true_entropy, self.true_state = self.helmholtz_free_energy()
         min_eig = self.min_eig
-        print('---------------')
-        print(self.min_eig)
-        print('---------------')
+        # print('---------------')
+        # print(self.min_eig)
+        # print('---------------')
         self.fidelity_threshold = 0.88
         
         self.hamiltonian, self.weights, eigvals, self.energy_shift = __ham['hamiltonian'], __ham['weights'],__ham['eigvals'], __ham['energy_shift']
@@ -114,7 +114,7 @@ class CircuitEnv():
 
 
         self.action_size = len(dictionary_of_actions(self.num_qubits).keys())
-        print(self.action_size)
+        # print(self.action_size)
         self.previous_action = [0, 0, 0, 0]  
 
         if 'non_local_opt' in conf.keys():
@@ -249,7 +249,7 @@ class CircuitEnv():
             if rwd >= 5:
                 save_circ_init = self.make_circuit()
                 self.save_circ = save_circ_init.to_json()
-                print(save_circ_init)
+                # print(save_circ_init)
             else:
                 save_circ_init = 0
                 self.save_circ = 0    
@@ -266,8 +266,8 @@ class CircuitEnv():
         layers_done = self.step_counter == (self.num_layers - 1)
         
 
-        print(self.fidelity, self.error, self.error_expval, self.error_entropy)
-        print(fidelity_done,energy_done)
+        # print(self.fidelity, self.error, self.error_expval, self.error_entropy)
+        # print(fidelity_done,energy_done)
 
         done = int(all([energy_done, fidelity_done]) or layers_done)
         # done = int(energy_done or layers_done)

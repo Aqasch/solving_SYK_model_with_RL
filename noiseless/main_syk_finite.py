@@ -207,7 +207,6 @@ def one_episode(episode_no, env, agent, episodes):
 
 def train(agent, env, episodes, seed, output_path,threshold):
     """Training loop"""
-    threshold_crossed = 0
     for e in range(episodes):
         
         one_episode(e, env, agent, episodes)
@@ -217,9 +216,6 @@ def train(agent, env, episodes, seed, output_path,threshold):
             torch.save(agent.policy_net.state_dict(), f"{output_path}/thresh_{threshold}_{seed}_model.pth")
             torch.save(agent.optim.state_dict(), f"{output_path}/thresh_{threshold}_{seed}_optim.pth")
             torch.save( {i: a._asdict() for i,a in enumerate(agent.memory.memory)}, f"{output_path}/thresh_{threshold}_{seed}_replay_buffer.pth")
-        if env.error <= 0.0016:
-            threshold_crossed += 1
-            np.save( f'threshold_crossed', threshold_crossed )
 
 def get_args(argv):
     parser = argparse.ArgumentParser()
@@ -242,7 +238,10 @@ if __name__ == '__main__':
         results_path =f"results/"
     pathlib.Path(f"{results_path}{args.experiment_name}{args.config}").mkdir(parents=True, exist_ok=True)
     # device = torch.device(f"cuda:{args.gpu_id}")
-    device = torch.device(f"cpu:0")
+    if conf['env']['device'] == 'cpu':
+        device = torch.device(f"cpu:0")
+    elif conf['env']['device'] == 'gpu':
+        device = torch.device(f"cuda:{args.gpu_id}")
     
     
    
@@ -253,16 +252,6 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed(args.seed)
     np.random.seed(args.seed)
-
-    # wandb_project = 
-    # wandb_entity = 
-
-    # wandb.login()
-    # run = wandb.init(project=wandb_project,
-    #                 config=conf,
-    #                 entity= wandb_entity,
-    #                 group=args.wandb_group,
-    #                 name=args.wandb_name)
     
 
     actions_test = []

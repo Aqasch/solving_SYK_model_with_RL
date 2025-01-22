@@ -265,8 +265,8 @@ class CircuitEnv():
         layers_done = self.step_counter == (self.num_layers - 1)
         
 
-        print(self.fidelity, self.fidelity_threshold, self.error, self.done_threshold)
-        print(fidelity_done,energy_done)
+        # print(self.fidelity, self.fidelity_threshold, self.error, self.done_threshold)
+        # print(fidelity_done,energy_done)
 
         done = int(all([energy_done, fidelity_done]) or layers_done)
         # done = int(energy_done or layers_done)

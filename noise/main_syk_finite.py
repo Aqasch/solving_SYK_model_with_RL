@@ -7,7 +7,7 @@ import argparse
 import pathlib
 import copy
 from utils_noise import get_config
-from environment_syk_finite_noise import CircuitEnv
+from environment_syk_finite import CircuitEnv
 import agents
 import time
 torch.set_num_threads(1)
@@ -207,7 +207,6 @@ def one_episode(episode_no, env, agent, episodes):
 
 def train(agent, env, episodes, seed, output_path,threshold):
     """Training loop"""
-    threshold_crossed = 0
     for e in range(episodes):
         
         one_episode(e, env, agent, episodes)
@@ -217,9 +216,6 @@ def train(agent, env, episodes, seed, output_path,threshold):
             torch.save(agent.policy_net.state_dict(), f"{output_path}/thresh_{threshold}_{seed}_model.pth")
             torch.save(agent.optim.state_dict(), f"{output_path}/thresh_{threshold}_{seed}_optim.pth")
             torch.save( {i: a._asdict() for i,a in enumerate(agent.memory.memory)}, f"{output_path}/thresh_{threshold}_{seed}_replay_buffer.pth")
-        if env.error <= 0.0016:
-            threshold_crossed += 1
-            np.save( f'threshold_crossed', threshold_crossed )
 
 def get_args(argv):
     parser = argparse.ArgumentParser()

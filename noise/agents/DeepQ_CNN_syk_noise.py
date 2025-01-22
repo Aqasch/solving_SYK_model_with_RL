@@ -172,23 +172,7 @@ class DQN_CNN(object):
                 in_feat  = 640+3*128
             elif self.layers == 7:
                 in_feat  = 640+11*128
-        return in_feat
-    # def unpack_network(self, channels, kernel_sizes, strides, p):
-    #     layers = []
-    #     input_channels = 1  # Number of input channels
-    #     channels = [32,64,128]
-    #     kernel_size = (3,3,3)
-    #     for output_channels in channels:
-    #         layers.append(nn.Conv3d(input_channels, output_channels, kernel_size=kernel_size, padding=(1, 1, 1)))
-    #         layers.append(nn.LeakyReLU())  # Using Leaky ReLU
-    #         layers.append(nn.MaxPool3d(kernel_size=(2,2,2), stride = (2,2,2)))  # Optional: Add max pooling layer
-    #         input_channels = output_channels
-    #     layers.append(nn.Flatten())
-    #     layers.append(nn.Linear(1280, 512))
-    #     layers.append(nn.LeakyReLU())
-    #     layers.append(nn.Linear(512, self.action_size))
-    #     return nn.Sequential(*layers)
-    
+        return in_feat    
 
 
 class ReplayMemory(object):
