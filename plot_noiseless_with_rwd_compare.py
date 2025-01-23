@@ -1,3 +1,4 @@
+import os
 import json
 import numpy as np
 import scipy.linalg as la
@@ -7,6 +8,7 @@ from qiskit import QuantumCircuit
 import matplotlib.lines as mlines
 from noise.true_helmolhz_free_energy import helmholtz_free_energy
 
+os.environ["XDG_SESSION_TYPE"] = "xcb"
 
 plt.rcParams.update({
     "text.usetex": True,
@@ -118,7 +120,7 @@ seed = 1
 
 def get_user_choice_qubits(question):
     while True:
-        choice = input(question + " (4, 5, 6, 7): ").lower()
+        choice = input(question + " (4 or 5 or 6 or 7): ").lower()
         if choice in ['4', '5', '6', '7']:
             return int(choice)
 
@@ -129,7 +131,7 @@ neural_net_list = ['3D_CNN', '1D_FNN']
 neural_net = neural_net_list[0]
 inverse_temp_list = ['5p2',18, 35]
 
-qubits = get_user_choice_qubits("Do you want to plot with only error reward?")
+qubits = get_user_choice_qubits("Do you want the plot for how many qubits?")
 
 if qubits == 4:
     layer = 5
@@ -234,10 +236,10 @@ for no, fidelity_eng in enumerate(fidelity_eng_list):
             """
             file = f'vanilla_cobyla_SYK_{qubits}q_inst{inst}_layer{layer}_cnn_finite_beta{inverse_temp}'
             if fidelity_eng:
-                with open(f'results/{neural_net}/error_and_fidelity_reward/{file}/summary_{seed}.json', 'r') as openfile:
+                with open(f'noiseless/results/3D-CNN/{file}/summary_{seed}.json', 'r') as openfile:
                     data = json.load(openfile)
             else:
-                with open(f'results/{neural_net}/{file}/summary_{seed}.json', 'r') as openfile:
+                with open(f'noiseless/results/3D-CNN/{file}/summary_{seed}.json', 'r') as openfile:
                     data = json.load(openfile)
 
             error_list  = []
