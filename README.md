@@ -10,7 +10,8 @@
 <p>
 </p>
 
-# <b>The list of contents:</b>
+<h1 id="The-list-of-contents"> <b> The list of contents</b></h1>
+
 <ol>
     <li><a href = "#What is SYK model?">What is SYK model?</a></li>
     <li><a href = "#The main bottleneck we tackle">The main bottleneck we tackle</a></li>
@@ -38,7 +39,7 @@
 </p>
 
 
-<h1 id="What is SYK model?"> <b> What is SYK model?</b></h2>
+<h1 id="What is SYK model?"> <b> What is SYK model?</b></h1>
 
 The Sachdev-Ye-Kitaev (SYK) model is a quantum mechanical system that has garnered significant attention in both condensed matter and high-energy physics due to its unique properties and connections to quantum gravity. The model consists of a large number (N) of interacting fermions in zero spatial dimensions and one time dimension. These fermions interact with each other through random all-to-all couplings, meaning each fermion can interact with any other fermion in the system4. This randomness in interactions is a key feature of the model. Key characteristics of the SYK model include:
 
@@ -53,6 +54,8 @@ The Sachdev-Ye-Kitaev (SYK) model is a quantum mechanical system that has garner
 5. **Relevance to condensed matter systems:** The model has potential applications in understanding strongly correlated materials and strange metals.
 
 The model's unique combination of properties makes it a powerful tool for exploring fundamental questions in quantum mechanics, gravity, and the nature of spacetime. Its study has led to insights in areas ranging from quantum information to black hole physics, making it a focal point of research in theoretical physics.
+
+[Back to Top](#The-list-of-contents)
 <hr>
 <p>
 </p>
@@ -67,6 +70,8 @@ Preparing thermal states for large SYK systems (N > 12) on current quantum devic
 <p align="center">
   <img src="pics/cnot_count.png" alt="RLVTSP" width="400" height="auto">
 </p>
+
+[Back to Top](#The-list-of-contents)
 <hr>
 <hr>
 
@@ -85,6 +90,7 @@ To soldify the advantage with CNN we consider two distinct 4-qubit Hamiltonians 
 
 ![RLVTSP](pics/cnn_vs_fnn.png)
 
+[Back to Top](#The-list-of-contents)
 <hr>
 <hr>
 <p>
@@ -179,6 +185,8 @@ In this research the SYK Hamiltonian generation was done using the link:
 
 [A model of quantum gravity on a noisy quantum computer -- code and circuit release](https://zenodo.org/records/10202045)
 
+[Back to Top](#The-list-of-contents)
+
 <hr>
 <p>
 </p>
@@ -197,4 +205,6 @@ If you find my research helpful kindly cite it as:
     primaryClass={quant-ph}
 }
 ```
+
+[Back to Top](#The-list-of-contents)
 </div>
