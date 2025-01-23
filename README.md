@@ -1,6 +1,6 @@
 # Improved thermal state preparation of SYK model on QPU with RL and CNN ([Paper](https://arxiv.org/abs/2501.11454))
 
-<div style="font-size: 16px;">
+<div style="font-size: 20px;">
 
 ![RLVTSP](pics/SYK_with_RL_diagram.png)
 
