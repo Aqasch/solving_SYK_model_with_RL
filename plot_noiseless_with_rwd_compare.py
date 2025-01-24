@@ -131,7 +131,7 @@ neural_net_list = ['3D_CNN', '1D_FNN']
 neural_net = neural_net_list[0]
 inverse_temp_list = ['5p2',18, 35]
 
-qubits = get_user_choice_qubits("Do you want the plot for how many qubits?")
+qubits = get_user_choice_qubits("The plot is for for how many qubits?")
 
 if qubits == 4:
     layer = 5

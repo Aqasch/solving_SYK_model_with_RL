@@ -64,9 +64,9 @@ The model's unique combination of properties makes it a powerful tool for explor
 
 Preparing thermal states for large SYK systems (N > 12) on current quantum devices poses a significant challenge due to the increasing complexity of parameterized quantum circuits. To address this, we propose an innovative approach
 
-    Combining reinforcement learning (RL) framework with convolutional neural networks, our method refines both the quantum circuit structure and its parameters. Hence overcome the limitations of traditional variational methods and make the preparation of thermal state beyond 12 Majorana fermions possible on near-term quantum hardware.
+- **Combining reinforcement learning (RL) framework with convolutional neural networks (CNNs)**, our method refines both the quantum circuit structure and its parameters. Hence overcome the limitations of traditional variational methods and make the preparation of thermal state beyond 12 Majorana fermions possible on near-term quantum hardware.
 
-**For an example we improve CNOT count by at least 100-fold (for N > 10) compared to first-order Trotterization (for $\beta=$ inverse temperature $=5.2$)!**
+For an example we improve CNOT count by at least 100-fold (for N > 10) compared to first-order Trotterization (for $\beta=$ inverse temperature $=5.2$)!**
 <p align="center">
   <img src="pics/cnot_count.png" alt="RLVTSP" width="400" height="auto">
 </p>
@@ -82,9 +82,9 @@ Preparing thermal states for large SYK systems (N > 12) on current quantum devic
 
 A binary encoding scheme encodes quantum circuit into a 3D tensor as RL-state capturing the order and arrangement of gates. CNN instead of a FNN is prefered because of the following reasons:
 
-    1. Unlike methods that flatten the 3D encoding into a single dimension (e.g. in FNNs) this scheme retains the full 3D structure.
+- Unlike methods that flatten the 3D encoding into a single dimension (e.g. in FNNs) this scheme retains the **full 3D structure**.
 
-    2. The spatial structure is directly leveraged using a 3D-CNN, enabling more effective learning and representation of quantum circuit features.
+- **The spatial structure is directly leveraged using a 3D-CNN**, enabling more effective learning and representation of quantum circuit features.
 
 To soldify the advantage with CNN we consider two distinct 4-qubit Hamiltonians (1) The $N=8$ SYK dense Hamiltonian and (2) an $\texttt{LiH}$ molecule with $3.4$ bond distance. This encoding scheme improves the agent's ability to process and analyze quantum circuits as can be seen here:
 
