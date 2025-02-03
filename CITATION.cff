@@ -8,4 +8,4 @@ title: "Improving thermal state prepration of SYK model with RL and CNN"
 version: 0.0.1
 doi: 10.48550/arXiv.2501.11454
 date-released: 2025-01-23
-url: "https://github.com/Aqasch/solving_SYK_model_with_RL/tree/main"
+howpublish: "\url{https://github.com/Aqasch/solving_SYK_model_with_RL/tree/main}"
