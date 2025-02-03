@@ -41,7 +41,7 @@
 
 <h1 id="What is SYK model?"> <b> What is SYK model?</b></h1>
 
-The Sachdev-Ye-Kitaev (SYK) model is a quantum mechanical system that has garnered significant attention in both condensed matter and high-energy physics due to its unique properties and connections to quantum gravity. The model consists of a large number (N) of interacting fermions in zero spatial dimensions and one time dimension. These fermions interact with each other through random all-to-all couplings, meaning each fermion can interact with any other fermion in the system4. This randomness in interactions is a key feature of the model. Key characteristics of the SYK model include:
+The Sachdev-Ye-Kitaev (SYK) model is a quantum mechanical system that has garnered significant attention in both condensed matter and high-energy physics due to its unique properties and connections to quantum gravity. The model consists of a large number (N) of interacting fermions in zero spatial dimensions and one time dimension. These fermions interact with each other through random all-to-all couplings, meaning each fermion can interact with any other fermion in the system. This randomness in interactions is a key feature of the model. Key characteristics of the SYK model include:
 
 1. **Exact solvability:** Despite its complexity, the model can be solved exactly in certain limits, making it a valuable tool for theoretical studies.
 
@@ -66,7 +66,7 @@ Preparing thermal states for large SYK systems (N > 12) on current quantum devic
 
 - **Combining reinforcement learning (RL) framework with convolutional neural networks (CNNs)**, our method refines both the quantum circuit structure and its parameters. Hence overcome the limitations of traditional variational methods and make the preparation of thermal state beyond 12 Majorana fermions possible on near-term quantum hardware.
 
-For an example we improve CNOT count by at least 100-fold (for N > 10) compared to first-order Trotterization (for $\beta=$ inverse temperature $=5.2$)!**
+For an example we improve CNOT count by at least 100-fold (for N > 10) compared to first-order Trotterization (for inverse temperature 5.2) for other inverse temperatures and elaborated discussions kindly check the paper!
 <p align="center">
   <img src="pics/cnot_count.png" alt="RLVTSP" width="400" height="auto">
 </p>
